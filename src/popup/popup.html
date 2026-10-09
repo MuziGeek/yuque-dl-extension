@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>语雀知识库下载</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <header class="popup-header">
+      <span class="logo">语</span>
+      <div>
+        <div class="title">语雀知识库下载</div>
+        <div class="subtitle">yuque-dl 浏览器插件</div>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="label">当前标签页</div>
+      <div id="targetUrl" class="url">读取中…</div>
+      <div id="kindBadge" class="badge badge-unknown">未知</div>
+    </section>
+
+    <div class="actions">
+      <button id="openPanelBtn" class="primary" disabled>打开下载面板</button>
+      <button id="openOptionsBtn" class="ghost">设置</button>
+    </div>
+
+    <p class="tip">提示：如为语雀知识库/文档页，点击上方按钮即可整库下载为本地 Markdown。</p>
+
+    <script type="module" src="./popup.js"></script>
+  </body>
+</html>

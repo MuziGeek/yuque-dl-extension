@@ -1,0 +1,145 @@
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --fg: #1f2329;
+  --muted: #646a73;
+  --border: #e5e6eb;
+  --primary: #00b96b;
+  --primary-hover: #009f5c;
+  --chip: #f2f3f5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1f2023;
+    --fg: #e8e8e8;
+    --muted: #9aa0a6;
+    --border: #33363b;
+    --chip: #2b2d31;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 320px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 13px;
+}
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 14px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.panel {
+  padding: 12px 14px;
+}
+
+.label {
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+.url {
+  word-break: break-all;
+  background: var(--chip);
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 11px;
+  line-height: 1.5;
+  max-height: 76px;
+  overflow: auto;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  background: var(--chip);
+  color: var(--muted);
+}
+
+.badge.badge-book,
+.badge.badge-doc {
+  background: rgba(0, 185, 107, 0.12);
+  color: var(--primary);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  padding: 0 14px 12px;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--fg);
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+button.primary {
+  flex: 1;
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+button.primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+button.ghost {
+  flex: 0 0 auto;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tip {
+  margin: 0;
+  padding: 0 14px 14px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="flowTitle flowDesc">
+  <title id="flowTitle">使用流程：识别当前标签页 → 选择保存目录 → 拉取目录树 → 并发下载 → 写入本地</title>
+  <desc id="flowDesc">五个步骤的水平流程图：识别当前标签页并提取 URL、用 File System Access API 选择保存目录、拉取语雀知识库目录树（book.toc）、并发下载文档/图片/附件、写成本地 Markdown 目录并生成 index.md。</desc>
+
+  <rect width="1200" height="300" rx="24" fill="#0E1512"/>
+  <rect x="0.5" y="0.5" width="1199" height="299" rx="23.5" fill="none" stroke="#1E2B25"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#00B96B"/>
+    </marker>
+  </defs>
+
+  <g transform="translate(64 80)">
+    <!-- card 01 -->
+    <rect x="0" y="0" width="196" height="120" rx="12" fill="#16211C" stroke="#26362E"/>
+    <text x="16" y="26" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18" font-weight="700" fill="#00B96B">01</text>
+    <text x="16" y="62" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="600" fill="#E8F1EC">识别当前标签页</text>
+    <text x="16" y="90" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" fill="#6F8A7E">提取页面 URL</text>
+
+    <!-- card 02 -->
+    <rect x="218" y="0" width="196" height="120" rx="12" fill="#16211C" stroke="#26362E"/>
+    <text x="234" y="26" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18" font-weight="700" fill="#00B96B">02</text>
+    <text x="234" y="62" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="600" fill="#E8F1EC">选择保存目录</text>
+    <text x="234" y="90" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" fill="#6F8A7E">FSA 系统目录框</text>
+
+    <!-- card 03 -->
+    <rect x="436" y="0" width="196" height="120" rx="12" fill="#16211C" stroke="#26362E"/>
+    <text x="452" y="26" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18" font-weight="700" fill="#00B96B">03</text>
+    <text x="452" y="62" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="600" fill="#E8F1EC">拉取目录树</text>
+    <text x="452" y="90" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" fill="#6F8A7E">解析 book.toc</text>
+
+    <!-- card 04 -->
+    <rect x="654" y="0" width="196" height="120" rx="12" fill="#16211C" stroke="#26362E"/>
+    <text x="670" y="26" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18" font-weight="700" fill="#00B96B">04</text>
+    <text x="670" y="62" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="600" fill="#E8F1EC">并发下载</text>
+    <text x="670" y="90" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" fill="#6F8A7E">正文 / 图片 / 附件</text>
+
+    <!-- card 05 -->
+    <rect x="872" y="0" width="196" height="120" rx="12" fill="#16211C" stroke="#26362E"/>
+    <text x="888" y="26" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18" font-weight="700" fill="#00B96B">05</text>
+    <text x="888" y="62" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="600" fill="#E8F1EC">写入本地文件</text>
+    <text x="888" y="90" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" fill="#6F8A7E">index.md + md</text>
+  </g>
+
+  <!-- connectors -->
+  <line x1="260" y1="140" x2="276" y2="140" stroke="#26362E" stroke-width="1.5"/>
+  <line x1="478" y1="140" x2="494" y2="140" stroke="#26362E" stroke-width="1.5"/>
+  <line x1="696" y1="140" x2="712" y2="140" stroke="#26362E" stroke-width="1.5"/>
+  <line x1="914" y1="140" x2="930" y2="140" stroke="#26362E" stroke-width="1.5"/>
+  <circle cx="268" cy="140" r="3" fill="#00B96B"/>
+  <circle cx="486" cy="140" r="3" fill="#00B96B"/>
+  <circle cx="704" cy="140" r="3" fill="#00B96B"/>
+  <circle cx="922" cy="140" r="3" fill="#00B96B"/>
+  <path d="M 930 140 L 924 136 M 930 140 L 924 144" stroke="#00B96B" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+</svg>

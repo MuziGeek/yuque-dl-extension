@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>语雀知识库下载</title>
+    <link rel="stylesheet" href="./panel.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand">
+        <span class="logo">语</span>
+        <div>
+          <h1>语雀知识库下载</h1>
+          <p>把当前打开的语雀知识库 / 文档下载为本地 Markdown</p>
+        </div>
+      </div>
+      <button id="openOptionsBtn" class="ghost">设置</button>
+    </header>
+
+    <main class="app-main">
+      <section class="card">
+        <div class="card-title">1. 目标</div>
+        <div class="row">
+          <input id="targetUrl" type="text" placeholder="https://www.yuque.com/用户名/知识库名" />
+          <button id="detectBtn">识别</button>
+        </div>
+        <div class="detect-result">
+          <span id="kindBadge" class="badge">未识别</span>
+          <span id="loginBadge" class="badge">登录状态检测中…</span>
+          <span id="detectDetail" class="muted"></span>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-title">2. 保存位置</div>
+        <div class="row">
+          <button id="pickDirBtn" class="primary">选择文件夹…</button>
+          <button id="reuseDirBtn" class="ghost" hidden>使用上次的文件夹</button>
+          <span id="dirName" class="muted">尚未选择</span>
+        </div>
+        <p class="hint">下载内容将写入：<code id="dirPreview">{所选目录}/知识库名/...md</code></p>
+      </section>
+
+      <section class="card">
+        <div class="card-title">3. 选项</div>
+        <div class="options">
+          <label><input type="checkbox" id="optIgnoreImg" /> 忽略图片（不下载，保留远程链接）</label>
+          <label><input type="checkbox" id="optIgnoreAttachments" /> 忽略附件</label>
+          <label><input type="checkbox" id="optToc" /> 生成文内目录</label>
+          <label><input type="checkbox" id="optHideFooter" /> 隐藏页脚（更新时间 / 原文地址）</label>
+          <label><input type="checkbox" id="optVideo" /> 视频链接转为 &lt;video&gt; 标签</label>
+          <label><input type="checkbox" id="optIncremental" /> 增量下载（仅更新有变化的文档）</label>
+          <label class="field">
+            附件忽略后缀
+            <input type="text" id="optAttachmentExts" placeholder="如 mp4,pdf，留空表示不忽略" />
+          </label>
+          <label class="field">
+            文档并发
+            <input type="number" id="optDocsConc" min="1" max="8" step="1" />
+          </label>
+          <label class="field">
+            文件并发
+            <input type="number" id="optFilesConc" min="1" max="12" step="1" />
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-title">4. 开始</div>
+        <div class="row">
+          <button id="startBtn" class="primary" disabled>开始下载</button>
+          <button id="cancelBtn" class="ghost" disabled>取消</button>
+          <button id="retryFailedBtn" class="ghost" hidden>仅重试失败项</button>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress"><div id="progressBar"></div></div>
+          <div id="progressText" class="muted">待开始</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-title">日志</div>
+        <div id="logList" class="log"></div>
+      </section>
+    </main>
+
+    <script type="module" src="./panel.js"></script>
+  </body>
+</html>

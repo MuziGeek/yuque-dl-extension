@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>语雀知识库下载 · 设置</title>
+    <link rel="stylesheet" href="./options.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>语雀知识库下载 · 设置</h1>
+
+      <section class="card">
+        <h2>登录与鉴权</h2>
+        <p class="muted">
+          默认情况下插件直接复用浏览器里已登录的语雀 Cookie，无需任何配置。<br />
+          仅当自动登录失败（例如未在浏览器登录、或需要下载别人分享的私有知识库）时，才需要手动填写 Token。
+        </p>
+
+        <label class="row-inline">
+          <input type="checkbox" id="manualTokenEnabled" />
+          启用「手动 Token」（会覆盖自动登录）
+        </label>
+
+        <label class="field">
+          Token / Cookie 值
+          <input type="password" id="manualToken" placeholder="粘贴 _yuque_session 的值" />
+        </label>
+
+        <label class="field">
+          Cookie Key（默认为 _yuque_session，企业版可能不同）
+          <input type="text" id="cookieKey" placeholder="_yuque_session" />
+        </label>
+
+        <label class="field">
+          企业自定义域名（每行一个，如 https://yuque.example.com）
+          <textarea id="customDomains" rows="3" placeholder="https://yuque.example.com"></textarea>
+        </label>
+
+        <p class="hint">
+          获取 Token：在浏览器登录语雀 → 打开开发者工具 → Application → Cookies → 复制
+          <code>_yuque_session</code> 的值。
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>默认下载选项</h2>
+        <div class="options">
+          <label><input type="checkbox" id="ignoreImg" /> 忽略图片</label>
+          <label><input type="checkbox" id="ignoreAttachments" /> 忽略附件</label>
+          <label><input type="checkbox" id="toc" /> 生成文内目录</label>
+          <label><input type="checkbox" id="hideFooter" /> 隐藏页脚</label>
+          <label><input type="checkbox" id="convertMarkdownVideoLinks" /> 视频链接转 &lt;video&gt;</label>
+          <label><input type="checkbox" id="incremental" /> 默认增量下载</label>
+          <label class="field">
+            附件忽略后缀（逗号分隔）
+            <input type="text" id="ignoreAttachmentExts" placeholder="mp4,pdf" />
+          </label>
+          <label class="field">
+            文档并发
+            <input type="number" id="docsConcurrency" min="1" max="8" />
+          </label>
+          <label class="field">
+            文件并发
+            <input type="number" id="filesConcurrency" min="1" max="12" />
+          </label>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button id="saveBtn" class="primary">保存</button>
+        <button id="resetBtn" class="ghost">恢复默认</button>
+        <span id="status" class="muted"></span>
+      </div>
+
+      <section class="card about">
+        <h2>关于</h2>
+        <p class="muted">
+          本插件基于开源项目
+          <a href="https://github.com/gxr404/yuque-dl" target="_blank" rel="noreferrer noopener">yuque-dl</a>
+          （ISC License）改造，仅用于个人备份自己有权访问的语雀内容。请遵守语雀的服务条款与所在地区的法律法规。
+        </p>
+      </section>
+    </main>
+    <script type="module" src="./options.js"></script>
+  </body>
+</html>

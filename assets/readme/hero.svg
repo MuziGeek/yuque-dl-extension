@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="heroTitle heroDesc">
+  <title id="heroTitle">语雀知识库下载 —— 浏览器扩展</title>
+  <desc id="heroDesc">左侧为项目名“语雀知识库下载”与一句话说明：打开语雀页面，一键把知识库下载成本地 Markdown；右侧为下载后的本地目录结构，包含 index.md、带 uuid 后缀的 Markdown 文档、img 与 attachments 目录。</desc>
+
+  <rect width="1200" height="380" rx="24" fill="#0E1512"/>
+  <rect x="0.5" y="0.5" width="1199" height="379" rx="23.5" fill="none" stroke="#1E2B25"/>
+
+  <!-- ============ 左侧：身份 + 承诺 ============ -->
+  <g id="title-block" transform="translate(64 62)">
+    <rect x="0" y="-14" width="3" height="17" rx="1.5" fill="#00B96B"/>
+    <text x="18" y="0" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18" letter-spacing="2.6" fill="#6F8A7E">BROWSER EXTENSION</text>
+
+    <text x="0" y="72" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="58" font-weight="700" fill="#E8F1EC">语雀知识库下载</text>
+
+    <text x="0" y="118" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" fill="#A9BDB3">打开语雀页面，一键把知识库下载成本地 Markdown</text>
+    <text x="0" y="152" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="20" fill="#6F8A7E">文档、图片、附件一并落盘，目录层级原样保留</text>
+
+    <g id="meta-chips" transform="translate(0 214)">
+      <rect x="0" y="-17" width="180" height="34" rx="17" fill="#16211C" stroke="#26362E"/>
+      <text x="18" y="5" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18" fill="#93A89E">Chrome / Edge</text>
+
+      <rect x="192" y="-17" width="160" height="34" rx="17" fill="#16211C" stroke="#26362E"/>
+      <text x="210" y="5" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18" fill="#93A89E">Manifest V3</text>
+
+      <rect x="364" y="-17" width="150" height="34" rx="17" fill="#16211C" stroke="#26362E"/>
+      <text x="382" y="5" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18" fill="#93A89E">ISC License</text>
+    </g>
+  </g>
+
+  <!-- ============ 右侧：真实产出物（本地目录结构） ============ -->
+  <g id="output-tree" transform="translate(712 56)">
+    <rect x="0" y="0" width="424" height="268" rx="14" fill="#16211C" stroke="#26362E"/>
+
+    <text x="24" y="38" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="20" font-weight="700" fill="#E8F1EC">我的知识库/</text>
+
+    <g font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="20">
+      <text x="24" y="72" fill="#8FA69C">├──</text>
+      <text x="80" y="72" fill="#C8D8D0">index.md</text>
+
+      <text x="24" y="97" fill="#8FA69C">├──</text>
+      <text x="80" y="97" fill="#C8D8D0">快速开始_8f3c1a.md</text>
+
+      <text x="24" y="122" fill="#8FA69C">├──</text>
+      <text x="80" y="122" fill="#00B96B">部署指南_4d2e7b/</text>
+
+      <text x="24" y="147" fill="#8FA69C">│</text>
+      <text x="80" y="147" fill="#8FA69C">├──</text>
+      <text x="136" y="147" fill="#C8D8D0">index.md</text>
+
+      <text x="24" y="172" fill="#8FA69C">│</text>
+      <text x="80" y="172" fill="#8FA69C">├──</text>
+      <text x="136" y="172" fill="#C8D8D0">单机部署_a1b2c3.md</text>
+
+      <text x="24" y="197" fill="#8FA69C">│</text>
+      <text x="80" y="197" fill="#8FA69C">└──</text>
+      <text x="136" y="197" fill="#C8D8D0">集群部署_d4e5f6.md</text>
+
+      <text x="24" y="222" fill="#8FA69C">└──</text>
+      <text x="80" y="222" fill="#00B96B">img/  attachments/</text>
+    </g>
+  </g>
+</svg>

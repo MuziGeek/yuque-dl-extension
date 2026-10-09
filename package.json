@@ -1,0 +1,25 @@
+{
+  "name": "yuque-dl-extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "语雀知识库下载浏览器插件 —— 一键把当前打开的语雀知识库/文档下载为本地 Markdown（含图片与附件），可自选保存目录。基于 yuque-dl。",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "node scripts/build.mjs --test && node --test test/smoke.test.mjs"
+  },
+  "dependencies": {
+    "mdast-util-from-markdown": "^2.1.0",
+    "mdast-util-to-markdown": "^2.2.0",
+    "pako": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.332",
+    "@types/mdast": "^4.0.4",
+    "@types/pako": "^2.0.3",
+    "esbuild": "^0.28.2",
+    "typescript": "^5.9.3"
+  }
+}
