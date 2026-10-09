@@ -8,7 +8,9 @@
     "build": "node scripts/build.mjs",
     "watch": "node scripts/build.mjs --watch",
     "typecheck": "tsc --noEmit",
-    "test": "node scripts/build.mjs --test && node --test test/smoke.test.mjs"
+    "test": "node scripts/build.mjs --test && node --test test/smoke.test.mjs",
+    "pack": "node scripts/package.mjs",
+    "release": "node scripts/build.mjs && node scripts/package.mjs"
   },
   "dependencies": {
     "mdast-util-from-markdown": "^2.1.0",

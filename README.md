@@ -7,6 +7,8 @@
 [![License](https://img.shields.io/badge/license-ISC-00B96B)](./LICENSE)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-00B96B)](./manifest.json)
 [![Platform](https://img.shields.io/badge/Chrome%20/%20Edge-%E2%89%A588-00B96B)](#安装)
+[![Release](https://img.shields.io/github/v/release/MuziGeek/yuque-dl-extension?color=00B96B&label=release)](https://github.com/MuziGeek/yuque-dl-extension/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/MuziGeek/yuque-dl-extension/total?color=00B96B)](https://github.com/MuziGeek/yuque-dl-extension/releases)
 
 **English:** One-click download of the currently open Yuque knowledge base / document as local Markdown, with images and attachments preserved.
 
@@ -75,7 +77,21 @@
 
 ## 安装
 
-> 当前未上架 Chrome Web Store，需通过「加载已解压的扩展程序」安装。
+> 当前未上架 Chrome Web Store，通过「加载已解压的扩展程序」安装。**普通用户无需构建，直接下载 Release 压缩包即可。**
+
+### 方式一：下载 Release 压缩包（推荐，免构建）
+
+前往 [**Releases**](https://github.com/MuziGeek/yuque-dl-extension/releases/latest) 下载最新的 `yuque-dl-extension-v*.zip`：
+
+1. 解压到任意固定位置。解压后**请勿删除或移动该文件夹**，插件会一直从这里加载。
+2. 打开 Chrome / Edge，地址栏输入 `chrome://extensions`（Edge 为 `edge://extensions`）。
+3. 开启右上角「开发者模式」。
+4. 点击「加载已解压的扩展程序」，选择**包含 `manifest.json` 的那一层目录**。
+5. 工具栏出现插件图标即安装成功。
+
+压缩包内已附 `INSTALL.txt`，内容同上。
+
+### 方式二：从源码构建
 
 ```bash
 git clone https://github.com/MuziGeek/yuque-dl-extension.git
@@ -84,10 +100,7 @@ npm install
 npm run build          # 产物在 dist/ 目录
 ```
 
-1. 打开 Chrome / Edge，地址栏输入 `chrome://extensions`（Edge 为 `edge://extensions`）。
-2. 开启右上角「开发者模式」。
-3. 点击「加载已解压的扩展程序」，选择本项目的 `dist` 文件夹。
-4. 工具栏出现插件图标即安装成功。
+构建完成后，在「加载已解压的扩展程序」中选择 `dist` 文件夹。
 
 ---
 
@@ -138,7 +151,13 @@ npm run build        # 构建到 dist/
 npm run watch        # 监听构建
 npm run typecheck    # TypeScript 类型检查
 npm run test         # 基础单元测试
+npm run pack         # 把 dist/ 打包成 release/yuque-dl-extension-v{version}.zip
+npm run release      # build + pack，一条命令产出发布包
 ```
+
+发布流程：修改 `manifest.json` 与 `package.json` 中的 `version` → `npm run release` → 在 GitHub 创建同名 tag（如 `v0.1.0`）的 Release，并把 `release/*.zip` 作为附件上传。
+
+打包脚本 `scripts/package.mjs` 为**零依赖实现**（用 Node 内置 `zlib` 手写 ZIP 结构），不引入 `archiver` / `jszip` 等第三方库；默认剔除 `.map` 以减小体积，需要调试时用 `npm run pack -- --with-maps`。
 
 ---
 
